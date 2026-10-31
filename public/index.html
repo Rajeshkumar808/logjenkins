@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login - MongoDB</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <div id="authView">
+                <div class="brand">Simple Login</div>
+
+                <h1 id="formTitle">Welcome back</h1>
+                <p class="subtitle" id="formSubtitle">
+                    Login to your account
+                </p>
+
+                <form id="authForm">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input
+                            id="username"
+                            name="username"
+                            type="text"
+                            placeholder="Enter username"
+                            minlength="3"
+                            maxlength="30"
+                            pattern="[A-Za-z0-9_]{3,30}"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="Enter password"
+                            minlength="8"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <p id="message" class="message"
+                       role="alert" aria-live="polite"></p>
+
+                    <button id="submitButton" type="submit">
+                        Login
+                    </button>
+                </form>
+
+                <p class="switch-text">
+                    <span id="switchPrompt">Don't have an account?</span>
+                    <button type="button" class="text-button"
+                            id="switchButton">Register</button>
+                </p>
+            </div>
+
+            <div id="welcomeView" hidden>
+                <div class="success-icon" aria-hidden="true">✓</div>
+                <h1 id="welcomeHeading">Hello @username</h1>
+                <p class="subtitle">Welcome!</p>
+                <button id="logoutButton" type="button">Logout</button>
+            </div>
+        </section>
+
+        <p class="footer">Node.js · Express · MongoDB</p>
+    </main>
+</body>
+</html>
